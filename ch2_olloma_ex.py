@@ -17,6 +17,7 @@ print("Chain created...")
 for chunk in local_llm.stream("Explain quantum computing simply"):
     print(chunk.content, end="", flush=True)
 
+# Don't use this code, see EL Gemini "Simple Local Ollam Python Example" for more details 
 # result = local_chain.invoke({"concept": "quantum computing"})
 # print("Result obtained...")
 # print(result)
