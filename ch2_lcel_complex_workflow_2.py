@@ -25,4 +25,6 @@ enhanced_chain = RunnablePassthrough.assign(
 response = enhanced_chain.invoke({"topic": "a brave little toaster"})
                                  
 print(response.keys())
+print(response["story"])
+print(response["analysis"])
 
