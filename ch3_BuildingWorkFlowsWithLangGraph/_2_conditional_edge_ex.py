@@ -20,6 +20,7 @@ def generate_application(state):
 builder = StateGraph(JobApplicationState)
 builder.add_node("analyze_job_description", analyze_job_description)
 builder.add_node("generate_application", generate_application)
+
 def is_suitable_condition(state: JobApplicationState) -> Literal["generate_application", "__end__"]:
     if state.get("is_suitable"):
         return "generate_application"

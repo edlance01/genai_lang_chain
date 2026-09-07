@@ -1,6 +1,5 @@
-from typing_extensions import TypedDict
+from typing import TypedDict
 from langgraph.graph import StateGraph, START, END
-from IPython.display import Image, display
 
 class JobApplicationState(TypedDict):
     job_description: str

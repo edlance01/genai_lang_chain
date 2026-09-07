@@ -9,7 +9,7 @@ job_description: str = (
 )
 
 
-prompt_template_enum = (
+prompt = (
     "Given a job description, decide whether it suits a junior Java developer.\n"
     f"\nJOB DESCRIPTION:\n{job_description}\n\nAnswer only YES or NO."
 )
@@ -18,6 +18,6 @@ prompt_template_enum = (
 chain = llm | StrOutputParser()
 
 # return just a string (not AI Message Object)
-response = chain.invoke(prompt_template_enum).strip().upper()
+response = chain.invoke(prompt).strip().upper()
 
 print(response)

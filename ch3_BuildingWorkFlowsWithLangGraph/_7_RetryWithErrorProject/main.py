@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from pydantic import BaseModel, Field, ValidationError
 
 from langchain_core.prompts import ChatPromptTemplate
-from langchain_core.runnables import RunnableLambda
+#from langchain_core.runnables import RunnableLambda
 from langchain_openai import ChatOpenAI
 
 # Load environment configuration
@@ -52,7 +52,7 @@ def main():
     try:
         ActionItemList.model_validate_json(bad_raw_completion)
     except ValidationError as error:
-        print("Caught parsing error successfully!")
+        print("Caught parsing error successfully! **", error)
 
         # Fix prompt combining original bad output + exception details
         repair_prompt = ChatPromptTemplate.from_messages(
